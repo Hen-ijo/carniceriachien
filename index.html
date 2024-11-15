@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+
+  <div class="menu container">
+    <a href="#" class="logo">Beef</a>
+    <input type="checkbox" id="menu">
+    <label for="menu"><img src="images/menu.png" class="menu-icono" alt="menu"></label>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Reservaciones</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <ul>
+            <li class="submenu">
+             <img src="images/car.svg" id="img-carrito" alt="">
+             <div id="carrito">
+              <table id="lista-carrito">
+                 <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th></th>
+                    </tr>
+                 </thead>
+                 <tbody></tbody>
+              </table>
+              <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+             </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div class="header-content conteiner">
+
+    <h1>Carniceria Chien</h1>
+    <p>
+        En Carnicería Chien, nos especializamos en ofrecer cortes de carne de la más alta calidad,
+         seleccionados con esmero y provenientes de los mejores proveedores. Nuestro compromiso es brindar productos frescos,
+          con un sabor inigualable y una atención personalizada que hace la diferencia. 
+          Contamos con una amplia variedad de cortes de carne, desde los clásicos como el bife de chorizo y el asado, 
+          hasta opciones premium para los paladares más exigentes.
+        Además, en Carnicería Chien nos enorgullece la tradición de la carne argentina, 
+        garantizando productos que respetan los métodos de producción más cuidadosos y una trazabilidad completa, 
+        para que cada pieza que llegue a tu mesa sea sinónimo de frescura y sabor. 
+       Ya sea que busques un corte especial para una parrillada familiar o para una ocasión especial, 
+       en Carnicería Chien encontrarás lo que necesitas con la mejor calidad y servicio.
+
+
+    </p>
+
+    <div class="botons">
+     <a href="#" class="btn-1">Mas Informacion</a>
+     <a href="#" class="btn-1">Menu</a>
+    </div>
+
+    <div class="socials-1">
+    <img src="images/s1.svg" alt="">
+    <img src="images/s2.svg" alt="">
+    <img src="images/s3.svg" alt="">
+    </div>
+
+    <a href="#" >
+        <img class="arrow" src="images/arrow.svg" alt="">
+    </a>
+
+</div>
+
+</header>
+
+
+<section class="recetas container">
+
+<div class="recetas-1">
+  <h3>135 modos de preparar carne </h3>
+  <hr>
+  <p>Recetas</p>
+</div>
+<div class="recetas-2">
+  <h2>135 <br> Recetas <br> de carne</h2>
+</div>
+
+</section>
+
+
+
+<section class="platillos container" id="lista">
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+
+           <div class="swiper-slide">
+              <div class="platillo">
+                 <h3>Corte Americano</h3>
+                 <p class="precio">$200</p>
+                 <img src="images/pl1.png" alt="">
+                 <p>
+                    Sumérgete en el auténtico sabor de las mejores costillas de res con nuestro Corte Americano. 
+                    Este suculento corte, conocido por su textura tierna y jugosa,
+                     es cocinado a la perfección para ofrecerte una experiencia inigualable. 
+                     Preparado con una mezcla única de especias y marinados que resaltan su sabor,
+                      el Corte Americano se glasea con nuestra deliciosa salsa barbacoa casera,
+                       que le da un toque ahumado y caramelizado en cada bocado.
+                        Ideal para los amantes de la carne que buscan un festín lleno de sabor, 
+                    ¡te garantizamos que cada trozo será una explosión de delicia!
+                  </p>
+                  <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al Carrito</a>
+               </div>
+           </div>
+
+           <div class="swiper-slide">
+            <div class="platillo">
+               <h3>Corte Americano</h3>
+               <p class="precio">$200</p>
+               <img src="images/pl2.png" alt="">
+               <p>
+                El bife de chorizo es un corte emblemático de la carne argentina, reconocido por su sabor intenso y su textura jugosa.
+                 Se obtiene de la parte del lomo del animal, cerca del costillar, y se caracteriza por su grosor y la capa de grasa que lo rodea, 
+                 lo que le otorga una jugosidad excepcional al momento de cocinarlo. Al ser un corte magro pero con un veteado de grasa en el borde,
+                  se puede disfrutar tanto a la parrilla como a la plancha,
+                 logrando un dorado perfecto por fuera y un interior tierno y jugoso.
+                </p>
+                <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al Carrito</a>
+             </div>
+         </div>
+
+         <div class="swiper-slide">
+            <div class="platillo">
+               <h3>Lomo</h3>
+               <p class="precio">$200</p>
+               <img src="images/pl3.png" alt="">
+               <p>
+                Uno de los cortes más tiernos de la carne vacuna, proveniente de la parte central del animal. 
+                Es muy magro y se puede cocinar en diversas formas, incluyendo a la parrilla, al horno o en salsas.
+                </p>
+                <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al Carrito</a>
+             </div>
+         </div>
+
+         <div class="swiper-slide">
+            <div class="platillo">
+               <h3>Matambre</h3>
+               <p class="precio">$200</p>
+               <img src="images/pl4.png" alt="">
+               <p>
+                Corte delgado y de sabor fuerte que se obtiene de la parte inferior del costillar. Se cocina comúnmente a la parrilla o a la plancha.
+                </p>
+                <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al Carrito</a>
+             </div>
+         </div>
+
+
+
+        </div>
+
+                 <div class="swiper-button-next"></div>
+                 <div class="swiper-button-prev"></div>
+                 <div class="swiper-pagination"></div>
+
+   </div>
+
+</section>
+
+
+<section class="recetas container">
+
+    <div class="recetas-2">
+      
+        <h3>100 <br> Tipos <br> de carne</h3>
+
+    </div>
+    <div class="recetas-1">
+      
+        <h2>135 modos de preparar carne </h2>
+      <hr>
+      <p>kg</p>
+    </div>
+    
+    </section>
+
+
+    <section class="platillos container" id="lista-2">
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+    
+               <div class="swiper-slide">
+                  <div class="platillo">
+                     <h3>Chuleta de Cerdo</h3>
+                     <p class="precio">$200</p>
+                     <img src="images/c1.png" alt="">
+                     <p>
+                        Un corte de cerdo con hueso, muy sabroso y tierno, ideal para grillar o hacer a la parrilla
+                      </p>
+                      <a href="#" class="agregar-carrito btn-3" data-id="5">Agregar al Carrito</a>
+                   </div>
+               </div>
+    
+               <div class="swiper-slide">
+                <div class="platillo">
+                   <h3>Tira de Asado</h3>
+                   <p class="precio">$200</p>
+                   <img src="images/c2.png" alt="">
+                   <p>
+                    Similar al asado, pero cortado de manera transversal a las costillas, 
+                    lo que da lugar a piezas más pequeñas. Su cocción requiere tiempo y paciencia para lograr una textura tierna.
+                    </p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al Carrito</a>
+                 </div>
+             </div>
+    
+             <div class="swiper-slide">
+                <div class="platillo">
+                   <h3>Asado</h3>
+                   <p class="precio">$200</p>
+                   <img src="images/c3.png" alt="">
+                   <p>
+                    Corte por excelencia de las parrilladas argentinas. Se obtiene de las costillas del animal y se puede cocinar a la parrilla o al horno.
+                     Con su hueso y carne entreverada, es muy sabroso.
+                    </p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="7">Agregar al Carrito</a>
+                 </div>
+             </div>
+    
+             <div class="swiper-slide">
+                <div class="platillo">
+                   <h3>Entraña</h3>
+                   <p class="precio">$200</p>
+                   <img src="images/c1.png" alt="">
+                   <p>
+                    Un corte delgado y tierno que proviene de los músculos del costado. 
+                    Tiene un sabor muy característico, y su cocción rápida lo convierte en uno de los favoritos para la parrilla.
+                    </p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="8">Agregar al Carrito</a>
+                 </div>
+             </div>
+    
+    
+    
+            </div>
+    
+                     <div class="swiper-button-next"></div>
+                     <div class="swiper-button-prev"></div>
+                     <div class="swiper-pagination"></div>
+    
+       </div>
+    
+    </section>
+
+    <section class="recetas container">
+
+       
+    
+        </div>
+        <div class="recetas-1">
+          
+             <hr>
+          <p>Contacto</p>
+        </div>
+        
+        </section>
+
+        <footer class="footer container">
+        
+            <div class="links">
+             <div class="link">
+
+                <h3>Redes</h3>
+                <p>En Carnicería Chien, nos dedicamos a ofrecer los mejores cortes de carne, con calidad,
+                     frescura y atención personalizada,
+                     para que disfrutes de lo mejor de la parrilla argentina.</p>
+                <div class="socials-2">
+                    <img src="images/s1.svg" alt="">
+                    <img src="images/s2.svg" alt="">
+                    <img src="images/s3.svg" alt="">
+
+                </div>
+
+             </div>
+
+             <div class="link">
+                <h3>lorem </h3>
+                <ul>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+
+             </div>
+
+             <div class="link">
+                <h3>lorem </h3>
+                <ul>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                    <li><a href="#">lorem</a></li>
+                </ul>
+
+             </div>
+
+             <div class="link">
+                <h3>lorem </h3>
+                
+                  <form>
+                    <input type="text" placeholder="Nombre" class="inp">
+                    <input type="email" placeholder="Email" class="inp">
+                    <textarea class="inp"></textarea>
+                    <input class="btn-4" type="submit" value="Enviar">
+                  </form>
+                
+
+             </div>
+
+            </div>
+
+        </footer>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
