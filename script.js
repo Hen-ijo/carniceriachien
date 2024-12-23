@@ -168,3 +168,23 @@ function vaciarLocalStorage() {
     localStorage.clear();
 }
 
+// Variables
+let cartCount = 0;
+const cartCountElement = document.getElementById('cart-count');
+
+// Función para agregar productos al carrito
+function addToCart() {
+  cartCount++;
+  updateCartCount();
+}
+
+// Función para actualizar el contador
+function updateCartCount() {
+  cartCountElement.textContent = cartCount;
+  cartCountElement.style.display = cartCount > 0 ? 'block' : 'none';
+}
+
+// Simulación de agregar productos al carrito
+document.getElementById('cart-icon').addEventListener('click', addToCart);
+
+

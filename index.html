@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#f9f5f0" />
+   <title>Carniceria</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,18 +20,17 @@
     <label for="menu"><img src="images/menu.png" class="menu-icono" alt="menu"></label>
     <nav class="navbar">
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Reservaciones</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="/index.html">Inicio</a></li>
+            <li><a href="/productos.html">Productos</a></li>
+            <li><a href="/reseñas.html">Reseñas</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
 
     <div>
         <ul>
             <li class="submenu">
-             <img src="images/car.svg" id="img-carrito" alt="">
+             <img src="images/car.svg" id="img-carrito" alt="carrito de compras"><span id="cuenta-carrito">0</span>
              <div id="carrito">
               <table id="lista-carrito">
                  <thead>
@@ -48,18 +48,23 @@
             </li>
         </ul>
     </div>
+    <div class="cart-container">
+        <i class="fa fa-shopping-cart" id="cart-icon"></i>
+        <span id="cart-count">0</span>
+      </div>
+      
 
 </div>
 <div class="header-content conteiner">
 
-    <h1>Carniceria Chien</h1>
+    <h1>Carnes Chien</h1>
     <p>
-        En Carnicería Chien, nos especializamos en ofrecer cortes de carne de la más alta calidad,
+        En Carn Chien, nos especializamos en ofrecer cortes de carne de la más alta calidad,
          seleccionados con esmero y provenientes de los mejores proveedores. Nuestro compromiso es brindar productos frescos,
           con un sabor inigualable y una atención personalizada que hace la diferencia. 
           Contamos con una amplia variedad de cortes de carne, desde los clásicos como el bife de chorizo y el asado, 
           hasta opciones premium para los paladares más exigentes.
-        Además, en Carnicería Chien nos enorgullece la tradición de la carne argentina, 
+        Además, en Carnes Chien nos enorgullece la tradición de la carne argentina, 
         garantizando productos que respetan los métodos de producción más cuidadosos y una trazabilidad completa, 
         para que cada pieza que llegue a tu mesa sea sinónimo de frescura y sabor. 
        Ya sea que busques un corte especial para una parrillada familiar o para una ocasión especial, 
@@ -69,15 +74,22 @@
     </p>
 
     <div class="botons">
-     <a href="#" class="btn-1">Mas Informacion</a>
-     <a href="#" class="btn-1">Menu</a>
+     <a href="/reseñas.html" class="btn-1">Mas Informacion</a>
+     <a href="/productos.html" class="btn-1">Menu</a>
     </div>
 
     <div class="socials-1">
-    <img src="images/s1.svg" alt="">
-    <img src="images/s2.svg" alt="">
-    <img src="images/s3.svg" alt="">
+        <a href="https://www.instagram.com/henijo/profilecard/?igsh=MWY3aml6djJsOTd2eg==" target="_blank" title="Instagram">
+            <img src="images/s1.svg" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/share/1EomPV4kGi/" target="_blank" title="Twitter">
+            <img src="images/s2.svg" alt="Twitter">
+        </a>
+        <a href="https://x.com/henijo29?t=nZlWrBuyl-DKIPLvhyGANg&s=08" target="_blank" title="Facebook">
+            <img src="images/s3.svg" alt="Facebook">
+        </a>
     </div>
+    
 
     <a href="#" >
         <img class="arrow" src="images/arrow.svg" alt="">
@@ -91,12 +103,12 @@
 <section class="recetas container">
 
 <div class="recetas-1">
-  <h3>135 modos de preparar carne </h3>
+  <h3> Modos de preparar carne </h3>
   <hr>
   <p>Recetas</p>
 </div>
 <div class="recetas-2">
-  <h2>135 <br> Recetas <br> de carne</h2>
+  <h2> <br> Recetas <br> de carne</h2>
 </div>
 
 </section>
@@ -111,7 +123,7 @@
            <div class="swiper-slide">
               <div class="platillo">
                  <h3>Corte Americano</h3>
-                 <p class="precio">$200</p>
+                 <p class="precio">$4200</p>
                  <img src="images/pl1.png" alt="">
                  <p>
                     Sumérgete en el auténtico sabor de las mejores costillas de res con nuestro Corte Americano. 
@@ -130,7 +142,7 @@
            <div class="swiper-slide">
             <div class="platillo">
                <h3>Corte Americano</h3>
-               <p class="precio">$200</p>
+               <p class="precio">$3200</p>
                <img src="images/pl2.png" alt="">
                <p>
                 El bife de chorizo es un corte emblemático de la carne argentina, reconocido por su sabor intenso y su textura jugosa.
@@ -146,7 +158,7 @@
          <div class="swiper-slide">
             <div class="platillo">
                <h3>Lomo</h3>
-               <p class="precio">$200</p>
+               <p class="precio">$2200</p>
                <img src="images/pl3.png" alt="">
                <p>
                 Uno de los cortes más tiernos de la carne vacuna, proveniente de la parte central del animal. 
@@ -159,7 +171,7 @@
          <div class="swiper-slide">
             <div class="platillo">
                <h3>Matambre</h3>
-               <p class="precio">$200</p>
+               <p class="precio">$1200</p>
                <img src="images/pl4.png" alt="">
                <p>
                 Corte delgado y de sabor fuerte que se obtiene de la parte inferior del costillar. Se cocina comúnmente a la parrilla o a la plancha.
@@ -206,7 +218,7 @@
                <div class="swiper-slide">
                   <div class="platillo">
                      <h3>Chuleta de Cerdo</h3>
-                     <p class="precio">$200</p>
+                     <p class="precio">$2500</p>
                      <img src="images/c1.png" alt="">
                      <p>
                         Un corte de cerdo con hueso, muy sabroso y tierno, ideal para grillar o hacer a la parrilla
@@ -218,7 +230,7 @@
                <div class="swiper-slide">
                 <div class="platillo">
                    <h3>Tira de Asado</h3>
-                   <p class="precio">$200</p>
+                   <p class="precio">$5000</p>
                    <img src="images/c2.png" alt="">
                    <p>
                     Similar al asado, pero cortado de manera transversal a las costillas, 
@@ -231,7 +243,7 @@
              <div class="swiper-slide">
                 <div class="platillo">
                    <h3>Asado</h3>
-                   <p class="precio">$200</p>
+                   <p class="precio">$3000</p>
                    <img src="images/c3.png" alt="">
                    <p>
                     Corte por excelencia de las parrilladas argentinas. Se obtiene de las costillas del animal y se puede cocinar a la parrilla o al horno.
@@ -244,7 +256,7 @@
              <div class="swiper-slide">
                 <div class="platillo">
                    <h3>Entraña</h3>
-                   <p class="precio">$200</p>
+                   <p class="precio">$2000</p>
                    <img src="images/c1.png" alt="">
                    <p>
                     Un corte delgado y tierno que proviene de los músculos del costado. 
@@ -285,54 +297,24 @@
              <div class="link">
 
                 <h3>Redes</h3>
-                <p>En Carnicería Chien, nos dedicamos a ofrecer los mejores cortes de carne, con calidad,
+                <p>En Carnes Chien, nos dedicamos a ofrecer los mejores cortes de carne, con calidad,
                      frescura y atención personalizada,
                      para que disfrutes de lo mejor de la parrilla argentina.</p>
                 <div class="socials-2">
-                    <img src="images/s1.svg" alt="">
-                    <img src="images/s2.svg" alt="">
-                    <img src="images/s3.svg" alt="">
-
+                    <a href="https://www.instagram.com/henijo/profilecard/?igsh=MWY3aml6djJsOTd2eg==" target="_blank" title="Instagram">
+                        <img src="images/s1.svg" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/share/1EomPV4kGi/" target="_blank" title="Twitter">
+                        <img src="images/s2.svg" alt="Twitter">
+                    </a>
+                    <a href="https://x.com/henijo29?t=nZlWrBuyl-DKIPLvhyGANg&s=08" target="_blank" title="Facebook">
+                        <img src="images/s3.svg" alt="Facebook">
+                    </a>
                 </div>
 
              </div>
 
-             <div class="link">
-                <h3>lorem </h3>
-                <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                </ul>
-
-             </div>
-
-             <div class="link">
-                <h3>lorem </h3>
-                <ul>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                    <li><a href="#">lorem</a></li>
-                </ul>
-
-             </div>
-
-             <div class="link">
-                <h3>lorem </h3>
-                
-                  <form>
-                    <input type="text" placeholder="Nombre" class="inp">
-                    <input type="email" placeholder="Email" class="inp">
-                    <textarea class="inp"></textarea>
-                    <input class="btn-4" type="submit" value="Enviar">
-                  </form>
-                
-
-             </div>
+           
 
             </div>
 
