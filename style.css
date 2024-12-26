@@ -82,6 +82,21 @@ display: none;
     font-size: 24px;
     cursor: pointer;
   }
+
+  #cuenta-carrito {
+    color: #dfdde0; /* Color especificado */
+    font-weight: bold;
+    font-size: 14px; /* Tamaño ajustado para mejor visibilidad */
+    background-color: #252326; /* Fondo para destacar en el diseño oscuro */
+    padding: 2px 8px;
+    border-radius: 50%; /* Forma circular */
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-align: center;
+    min-width: 20px;
+  }
+  
   
   #cart-count {
     position: absolute;

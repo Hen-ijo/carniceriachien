@@ -1,190 +1,198 @@
-// Swiper.js Configuración
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  loopFillGroupWithBlank: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
+    520: {
+      slidesPerView: 2,
     },
-    breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
-        520: {
-            slidesPerView: 2
-        },
-        950: {
-            slidesPerView: 3
-        }
-    }
+    950: {
+      slidesPerView: 3,
+    },
+  },
 });
 
-// Carrito
-const carrito = document.getElementById('carrito');
-const elementos = document.getElementById('lista');
-const elementos2 = document.getElementById('lista-2');
-const lista = document.querySelector('#lista-carrito tbody');
-const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+// Variables
+const carrito = document.getElementById("carrito");
+const swiperWrapper1 = document.querySelector("#lista .swiper-wrapper");
+const swiperWrapper2 = document.querySelector("#lista-2 .swiper-wrapper");
+const lista = document.querySelector("#lista-carrito tbody");
+const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+const cuentaCarrito = document.getElementById("cuenta-carrito"); // Contador del carrito
+let productos = [];
+
+// Cargar productos desde productos.json
+fetch("productos.json")
+  .then((response) => response.json())
+  .then((data) => {
+    productos = data.productos;
+    mostrarProductos(productos);
+  })
+  .catch((error) => console.error("Error al cargar el JSON:", error));
+
+// Actualizar el contador del carrito
+function actualizarContadorCarrito() {
+  const totalProductos = lista.childElementCount;
+  cuentaCarrito.textContent = totalProductos;
+}
+
+function mostrarProductos(productos) {
+  productos.forEach((producto) => {
+    const swiperSlide = document.createElement("div");
+    swiperSlide.classList.add("swiper-slide");
+
+    swiperSlide.innerHTML = `
+      <div class="platillo">
+        <h3>${producto.nombre}</h3>
+        <p class="precio">$${producto.precio}</p>
+        <img src="${producto.imagen}" alt="">
+        <p>${producto.descripcion}</p>
+        <a href="#" class="agregar-carrito btn-2" data-id="${producto.id}">Agregar al Carrito</a>
+      </div>
+    `;
+
+    // Agregar los productos al Swiper correspondiente
+    if (producto.categoria === "carne") {
+      swiperWrapper1.appendChild(swiperSlide);
+    } else {
+      swiperWrapper2.appendChild(swiperSlide);
+    }
+  });
+
+  // Actualizar los sliders después de cargar productos
+  swiper.update();
+}
 
 cargarEventListeners();
 
 function cargarEventListeners() {
-    // Agregar elementos al carrito
-    elementos.addEventListener('click', comprarElemento);
-    elementos2.addEventListener('click', comprarElemento);
+  // Agregar elementos al carrito
+  swiperWrapper1.addEventListener("click", comprarElemento);
+  swiperWrapper2.addEventListener("click", comprarElemento);
 
-    // Eliminar elementos del carrito
-    carrito.addEventListener('click', eliminarElemento);
+  // Eliminar elementos del carrito
+  carrito.addEventListener("click", eliminarElemento);
 
-    // Vaciar el carrito
-    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+  // Vaciar el carrito
+  vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
 
-    // Mostrar elementos del LocalStorage
-    document.addEventListener('DOMContentLoaded', leerLocalStorage);
+  // Mostrar elementos del LocalStorage
+  document.addEventListener("DOMContentLoaded", leerLocalStorage);
+
+  // Agregar botón de comprar
+  const comprarBtn = document.createElement("button");
+  comprarBtn.id = "comprar-carrito";
+  comprarBtn.textContent = "Comprar";
+  comprarBtn.classList.add("btn-2");
+  carrito.appendChild(comprarBtn);
+  comprarBtn.addEventListener("click", comprarCarrito);
 }
 
 function comprarElemento(e) {
-    e.preventDefault();
-    if (e.target.classList.contains('agregar-carrito')) { // Corrección de 'classlist' a 'classList'
-        const elemento = e.target.parentElement.parentElement;
-        leerDatosElemento(elemento);
-    }
+  e.preventDefault();
+  if (e.target.classList.contains("agregar-carrito")) {
+    const elemento = e.target.parentElement;
+    leerDatosElemento(elemento);
+  }
 }
 
 function leerDatosElemento(elemento) {
-    const infoElemento = {
-        imagen: elemento.querySelector('img').src,
-        titulo: elemento.querySelector('h3').textContent,
-        precio: elemento.querySelector('.precio').textContent, // Selector válido
-        id: elemento.querySelector('a').getAttribute('data-id')
-    };
-
-    insertarCarrito(infoElemento);
+  const infoElemento = {
+    imagen: elemento.querySelector("img").src,
+    titulo: elemento.querySelector("h3").textContent,
+    precio: elemento.querySelector(".precio").textContent,
+    id: elemento.querySelector("a").getAttribute("data-id"),
+  };
+  insertarCarrito(infoElemento);
 }
 
 function insertarCarrito(elemento) {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-        <td>
-            <img src="${elemento.imagen}" width="100">
-        </td>
-        <td>${elemento.titulo}</td>
-        <td>${elemento.precio}</td>
-        <td>
-            <a href="#" class="borrar" data-id="${elemento.id}">Eliminar</a>
-        </td>
-    `;
-    lista.appendChild(row);
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td><img src="${elemento.imagen}" width="100"></td>
+    <td>${elemento.titulo}</td>
+    <td>${elemento.precio}</td>
+    <td><a href="#" class="borrar" data-id="${elemento.id}">Eliminar</a></td>
+  `;
+  lista.appendChild(row);
 
-    guardarElementoLocalStorage(elemento);
+  guardarElementoLocalStorage(elemento);
+  actualizarContadorCarrito(); // Actualizar contador
 }
 
 function eliminarElemento(e) {
-    e.preventDefault();
-
-    let elemento, elementoId;
-
-    if (e.target.classList.contains('borrar')) { // Corrección de 'classlist' a 'classList'
-        e.target.parentElement.parentElement.remove();
-        elemento = e.target.parentElement.parentElement;
-        elementoId = elemento.querySelector('a').getAttribute('data-id');
-    }
-
+  e.preventDefault();
+  if (e.target.classList.contains("borrar")) {
+    const elemento = e.target.parentElement.parentElement;
+    elemento.remove();
+    const elementoId = elemento.querySelector("a").getAttribute("data-id");
     eliminarElementoLocalStorage(elementoId);
+    actualizarContadorCarrito(); // Actualizar contador
+  }
 }
 
 function vaciarCarrito() {
-    while (lista.firstChild) {
-        lista.removeChild(lista.firstChild);
-    }
-
-    vaciarLocalStorage();
-    return false;
+  while (lista.firstChild) {
+    lista.removeChild(lista.firstChild);
+  }
+  vaciarLocalStorage();
+  actualizarContadorCarrito(); // Actualizar contador
 }
 
-function guardarElementoLocalStorage(elemento) {
-    let elementos;
-
-    elementos = obtenerElementosLocalStorage();
-
-    elementos.push(elemento);
-
-    localStorage.setItem('elementos', JSON.stringify(elementos));
-}
-
-function obtenerElementosLocalStorage() {
-    let elementosLS;
-
-    if (localStorage.getItem('elementos') === null) {
-        elementosLS = [];
-    } else {
-        elementosLS = JSON.parse(localStorage.getItem('elementos'));
-    }
-    return elementosLS;
+function comprarCarrito() {
+  if (lista.childElementCount > 0) {
+    alert("Compra realizada. ¡Gracias por tu compra!");
+    vaciarCarrito();
+  } else {
+    alert("El carrito está vacío. Agrega productos antes de comprar.");
+  }
 }
 
 function leerLocalStorage() {
-    let elementosLS;
+  let elementos = obtenerElementosLocalStorage();
+  elementos.forEach((elemento) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td><img src="${elemento.imagen}" width="100"></td>
+      <td>${elemento.titulo}</td>
+      <td>${elemento.precio}</td>
+      <td><a href="#" class="borrar" data-id="${elemento.id}">Eliminar</a></td>
+    `;
+    lista.appendChild(row);
+  });
+  actualizarContadorCarrito(); // Actualizar contador al cargar
+}
 
-    elementosLS = obtenerElementosLocalStorage();
+function guardarElementoLocalStorage(elemento) {
+  let elementos = obtenerElementosLocalStorage();
+  elementos.push(elemento);
+  localStorage.setItem("elementos", JSON.stringify(elementos));
+}
 
-    elementosLS.forEach(function (elemento) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>
-                <img src="${elemento.imagen}" width="100">
-            </td>
-            <td>${elemento.titulo}</td>
-            <td>${elemento.precio}</td>
-            <td>
-                <a href="#" class="borrar" data-id="${elemento.id}">Eliminar</a>
-            </td>
-        `;
-        lista.appendChild(row);
-    });
+function obtenerElementosLocalStorage() {
+  return localStorage.getItem("elementos") === null
+    ? []
+    : JSON.parse(localStorage.getItem("elementos"));
 }
 
 function eliminarElementoLocalStorage(id) {
-    let elementosLS;
-
-    elementosLS = obtenerElementosLocalStorage();
-
-    elementosLS.forEach(function (elemento, index) {
-        if (elemento.id === id) {
-            elementosLS.splice(index, 1);
-        }
-    });
-
-    localStorage.setItem('elementos', JSON.stringify(elementosLS));
+  let elementos = obtenerElementosLocalStorage();
+  elementos = elementos.filter((elemento) => elemento.id !== id);
+  localStorage.setItem("elementos", JSON.stringify(elementos));
 }
 
 function vaciarLocalStorage() {
-    localStorage.clear();
+  localStorage.clear();
 }
-
-// Variables
-let cartCount = 0;
-const cartCountElement = document.getElementById('cart-count');
-
-// Función para agregar productos al carrito
-function addToCart() {
-  cartCount++;
-  updateCartCount();
-}
-
-// Función para actualizar el contador
-function updateCartCount() {
-  cartCountElement.textContent = cartCount;
-  cartCountElement.style.display = cartCount > 0 ? 'block' : 'none';
-}
-
-// Simulación de agregar productos al carrito
-document.getElementById('cart-icon').addEventListener('click', addToCart);
-
-

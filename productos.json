@@ -1,0 +1,68 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Corte Americano",
+      "descripcion": "Costillas de res tiernas y jugosas glaseadas con salsa barbacoa.",
+      "precio": 4200,
+      "imagen": "images/pl1.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 2,
+      "nombre": "Bife de Chorizo",
+      "descripcion": "Corte clásico argentino, jugoso y lleno de sabor.",
+      "precio": 3200,
+      "imagen": "images/pl2.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 3,
+      "nombre": "Lomo",
+      "descripcion": "Uno de los cortes más tiernos y magros de la carne vacuna.",
+      "precio": 2200,
+      "imagen": "images/pl3.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 4,
+      "nombre": "Matambre",
+      "descripcion": "Corte delgado y de sabor fuerte, ideal para la parrilla.",
+      "precio": 1200,
+      "imagen": "images/pl4.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 5,
+      "nombre": "Chuleta de Cerdo",
+      "descripcion": "Corte tierno y jugoso, perfecto para parrilladas.",
+      "precio": 2500,
+      "imagen": "images/c1.png",
+      "categoria": "cerdo"
+    },
+    {
+      "id": 6,
+      "nombre": "Tira de Asado",
+      "descripcion": "Corte transversal a las costillas, cocción lenta para textura tierna.",
+      "precio": 5000,
+      "imagen": "images/c2.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 7,
+      "nombre": "Asado",
+      "descripcion": "Costillas de res con hueso, el corte por excelencia argentino.",
+      "precio": 3000,
+      "imagen": "images/c3.png",
+      "categoria": "carne"
+    },
+    {
+      "id": 8,
+      "nombre": "Entraña",
+      "descripcion": "Corte delgado y tierno con sabor único, ideal para parrilla.",
+      "precio": 2000,
+      "imagen": "images/c1.png",
+      "categoria": "carne"
+    }
+  ]
+}
