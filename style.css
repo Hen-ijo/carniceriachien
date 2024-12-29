@@ -675,7 +675,13 @@ max-width: 300px;
         background-color: #e59400;
     }
 
-
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: block;
+    }
+    
    
     
 

@@ -196,3 +196,43 @@ function eliminarElementoLocalStorage(id) {
 function vaciarLocalStorage() {
   localStorage.clear();
 }
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevenir el envío por defecto
+  let isValid = true;
+
+  // Validar el nombre
+  const name = document.getElementById("name");
+  const nameError = document.getElementById("name-error");
+  if (name.value.trim() === "") {
+      nameError.textContent = "Por favor, ingresa tu nombre.";
+      isValid = false;
+  } else {
+      nameError.textContent = "";
+  }
+
+  // Validar el correo
+  const email = document.getElementById("email");
+  const emailError = document.getElementById("email-error");
+  const emailPattern = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(email.value.trim())) {
+      emailError.textContent = "Por favor, ingresa un correo válido.";
+      isValid = false;
+  } else {
+      emailError.textContent = "";
+  }
+
+  // Validar el mensaje
+  const message = document.getElementById("message");
+  const messageError = document.getElementById("message-error");
+  if (message.value.trim() === "") {
+      messageError.textContent = "Por favor, escribe un mensaje.";
+      isValid = false;
+  } else {
+      messageError.textContent = "";
+  }
+
+  // Si todo es válido, enviar el formulario
+  if (isValid) {
+      this.submit();
+  }
+});
